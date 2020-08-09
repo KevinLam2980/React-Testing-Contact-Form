@@ -67,8 +67,8 @@ const ContactForm = () => {
           <label htmlFor="message">Message</label>
           <textarea name="message" id='message' ref={register({ required: false })} />
         </div>
-        {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+        {!postData ? <span data-testid='loading' >loading</span> : (
+          <pre data-testid="resolved" style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(postData, null, 2)}
           </pre>
         )}
